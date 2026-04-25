@@ -3,259 +3,71 @@ print("-------------------- Welcome to the unit concerter ---------------------"
 print("Available options mentioned below:")
 print("1. Weight")
 print("2. Distance")
-print("3. Currency")
-print("4. Temperature")
+print("3. Temperature")
 
 def wt_change():
     while True:
-        print("Available options in weights")
-        print("1. Kilograms (kg)")
-        print("2. Grams (g)")
-        print("3. Pounds (lb)")
-        print("4. Ounce (oz)")
-        initial_unit = int(input("Enter the option: "))
-        match initial_unit:
-            case 1:
-                print("Available options to change in weights")
-                print("1. Grams (g)")
-                print("2. Pounds (lb)")
-                print("3. Ounce (oz)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val * 1000
-                        print(f" {initial_val}kg = {final_val}g")
-                    case 2:
-                        final_val = initial_val * 2.205
-                        print(f"{initial_val}kg = {final_val}lb")
-                    case 3:
-                        final_val = initial_val * 35.274
-                        print(f"{initial_val}kg = {final_val}oz")
-                    case _:
-                        print("Invalid Type selected")
-            case 2:
-                print("Available options to change in weights")
-                print("1. Kilograms (kg)")
-                print("2. Pounds (lb)")
-                print("3. Ounce (oz)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val / 1000
-                        print(f" {initial_val}g = {final_val}kg")
-                    case 2:
-                        final_val = initial_val * 2.205 / 1000
-                        print(f"{initial_val}g = {final_val}lb")
-                    case 3:
-                        final_val = initial_val * 35.274 / 1000
-                        print(f"{initial_val}g = {final_val}oz")
-                    case _:
-                        print("Invalid Type selected")
-            case 3:
-                print("Available options to change in weights")
-                print("1. Kilograms (kg)")
-                print("2. Grams (g)")
-                print("3. Ounce (oz)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val / 2.205
-                        print(f" {initial_val}lb = {final_val}kg")
-                    case 2:
-                        final_val = initial_val * 1000 / 2.205
-                        print(f"{initial_val}lb = {final_val}g")
-                    case 3:
-                        final_val = initial_val * 16
-                        print(f"{initial_val}lb = {final_val}oz")
-                    case _:
-                        print("Invalid Type selected")
-            case 4:
-                print("Available options to change in weights")
-                print("1. Kilorams (kg)")
-                print("2. Grams (g)")
-                print("3. Pounds (lb)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val / (2.205*16)
-                        print(f" {initial_val}oz = {final_val}kg")
-                    case 2:
-                        final_val = initial_val * 1000 / (2.205*16)
-                        print(f"{initial_val}oz = {final_val}g")
-                    case 3:
-                        final_val = initial_val / 16
-                        print(f"{initial_val}oz = {final_val}lb")
-                    case _:
-                        print("Invalid Type selected")
-            case _:
-                print("Invalid Type selected")
-
-        choice = input("Do you wish to continue in this mode (y/n): ")
-        if choice.lower() == 'y':
-             continue
-        elif choice.lower() == 'n':
+        wt_unit_initial = input("Enter the unit of weight (kg/g/lb/oz): ")
+        wt_unit_final = input("Enter the unit you wish to convert to (kg/g/lb/oz): ")
+        wt_input = float(input("Enter the weight you wish to change: "))
+        wt_conversion = {
+            'kg': {'g': 1000, 'lb': 2.20462, 'oz': 35.274},
+            'g': {'kg': 0.001, 'lb': 0.00220462, 'oz': 0.035274},
+            'lb': {'kg': 0.453592, 'g': 453.592, 'oz': 16},
+            'oz': {'kg': 0.0283495, 'g': 28.3495, 'lb': 0.0625}
+        }
+        wt_output = wt_input * wt_conversion[wt_unit_initial.lower()][wt_unit_final.lower()]
+        print(f"{wt_input} {wt_unit_initial} is equal to {wt_output} {wt_unit_final}")
+        cont = input("Do you wish to continue in this mode(y/n): ")
+        if cont.lower() == 'y':
+            continue
+        elif cont.lower() == 'n':
             break
         else:
-             print("Invalid Choice!!")
+            print("Invalid Value, Try again!!")
+
 
 def dist_change():
     while True:
-        print("Available options in distances")
-        print("1. Kilometre (km)")
-        print("2. Metre (m)")
-        print("3. Mile (Mi)")
-        print("4. Yards (yd)")
-        initial_unit = int(input("Enter the option: "))
-        match initial_unit:
-            case 1:
-                print("Available options to change in distances")
-                print("1. Metre (m)")
-                print("2. Mile (Mi)")
-                print("3. Yards (yd)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val * 1000
-                        print(f" {initial_val}km = {final_val}m")
-                    case 2:
-                        final_val = initial_val * 0.621371
-                        print(f"{initial_val}km = {final_val}Mi")
-                    case 3:
-                        final_val = initial_val * 1093.61
-                        print(f"{initial_val}km = {final_val}yd")
-                    case _:
-                        print("Invalid Type selected")
-            case 2:
-                print("Available options to change in distances")
-                print("1. Kilometre (km)")
-                print("2. Mile (Mi)")
-                print("3. Yards (yd)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val / 1000
-                        print(f" {initial_val}m = {final_val}km")
-                    case 2:
-                        final_val = initial_val * 0.000621371
-                        print(f"{initial_val}m = {final_val}Mi")
-                    case 3:
-                        final_val = initial_val * 1.09361
-                        print(f"{initial_val}m = {final_val}yd")
-                    case _:
-                        print("Invalid Type selected")
-            case 3:
-                print("Available options to change in distances")
-                print("1. Kilometre (km)")
-                print("2. Metre (m)")
-                print("3. Yards (yd)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val / 0.621371
-                        print(f" {initial_val}Mi = {final_val}km")
-                    case 2:
-                        final_val = initial_val * 1000 / 0.621371
-                        print(f"{initial_val}Mi = {final_val}m")
-                    case 3:
-                        final_val = initial_val * 1760
-                        print(f"{initial_val}Mi = {final_val}yd")
-                    case _:
-                        print("Invalid Type selected")
-            case 4:
-                print("Available options to change in distances")
-                print("1. Kilometre (km)")
-                print("2. Metre (m)")
-                print("3. Mile (Mi)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val * 0.0009144
-                        print(f" {initial_val}yd = {final_val}km")
-                    case 2:
-                        final_val = initial_val * 0.9144
-                        print(f"{initial_val}yd = {final_val}m")
-                    case 3:
-                        final_val = initial_val / 1760
-                        print(f"{initial_val}yd = {final_val}Mi")
-                    case _:
-                        print("Invalid Type selected")
-            case _:
-                print("Invalid Type selected")
-
-        choice = input("Do you wish to continue in this mode (y/n): ")
-        if choice.lower() == 'y':
-             continue
-        elif choice.lower() == 'n':
+        dist_unit_initial = input("Enter the unit of distance (m/km/mi/ft): ")
+        dist_unit_final = input("Enter the unit you wish to convert to (m/km/mi/ft): ")
+        dist_input = float(input("Enter the distance you wish to change: "))
+        dist_conversion = {
+            'm': {'km': 0.001, 'mi': 0.000621371, 'ft': 3.28084},
+            'km': {'m': 1000, 'mi': 0.621371, 'ft': 3280.84},
+            'mi': {'m': 1609.34, 'km': 1.60934, 'ft': 5280},
+            'ft': {'m': 0.3048, 'km': 0.0003048, 'mi': 0.000189394}
+        }
+        dist_output = dist_input * dist_conversion[dist_unit_initial.lower()][dist_unit_final.lower()]
+        print(f"{dist_input} {dist_unit_initial} is equal to {dist_output} {dist_unit_final}")
+        cont = input("Do you wish to continue in this mode (y/n): ")
+        if cont.lower() == 'y':
+            continue
+        elif cont.lower() == 'n':
             break
         else:
-             print("Invalid Choice!!")
-
-def cur_change():
-    print("Currency mode is currently unavailable!!")
+            print("Invalid Value, Try again!!")
 
 def temp_change():
     while True:
-        print("Available options in temperature")
-        print("1. Celsius (°C)")
-        print("2. Fahrenheit (°F)")
-        print("3. Kelvin (K)")
-        initial_unit = int(input("Enter the option: "))
-        match initial_unit:
-            case 1:
-                print("Available options to change in temperature")
-                print("1. Fahrenheit (°F)")
-                print("2. Kelvin (K)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = (initial_val * 9/5) + 32
-                        print(f" {initial_val}°C = {final_val}°F")
-                    case 2:
-                        final_val = initial_val + 273.15
-                        print(f"{initial_val}°C = {final_val}K")
-                    case _:
-                        print("Invalid Type selected")
-            case 2:
-                print("Available options to change in temperature")
-                print("1. Celsius (°C)")
-                print("2. Kelvin (K)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = (initial_val - 32) * 5/9
-                        print(f" {initial_val}°F = {final_val}°C")
-                    case 2:
-                        final_val = ((initial_val - 32) * 5/9) + 273.15
-                        print(f"{initial_val}°F = {final_val}K")
-                    case _:
-                        print("Invalid Type selected")
-            case 3:
-                print("Available options to change in temperature")
-                print("1. Celsius (°C)")
-                print("2. Fahrenheit (°F)")
-                final_unit = int(input("Enter the option: "))
-                initial_val = int(input("Enter the value: "))
-                match final_unit:
-                    case 1:
-                        final_val = initial_val - 273.15
-                        print(f" {initial_val}K = {final_val}°C")
-                    case 2:
-                        final_val = ((initial_val - 273.15) * 9/5) + 32
-                        print(f"{initial_val}K = {final_val}°F")
-                    case _:
-                        print("Invalid Type selected")
+        temp_unit_initial = input("Enter the unit of temperature (C/F/K): ")
+        temp_unit_final = input("Enter the unit you wish to convert to (C/F/K): ")
+        temp_input = float(input("Enter the temperature you wish to change: "))
+        temp_conversion = {
+            'c': {'f': lambda x: (x * 9/5) + 32, 'k': lambda x: x + 273.15},
+            'f': {'c': lambda x: (x - 32) * 5/9, 'k': lambda x: (x - 32) * 5/9 + 273.15},
+            'k': {'c': lambda x: x - 273.15, 'f': lambda x: (x - 273.15) * 9/5 + 32}
+        }
+        temp_output = temp_conversion[temp_unit_initial.lower()][temp_unit_final.lower()](temp_input)
+        print(f"{temp_input} {temp_unit_initial} is equal to {temp_output} {temp_unit_final}")
+        cont = input("Do you wish to continue in this mode (y/n): ")
+        if cont.lower() == 'y':
+            continue
+        elif cont.lower() == 'n':
+            break
+        else:
+            print("Invalid Value, Try again!!")
 
-"""
 while True:
     while True:
         change_quantity = int(input("Enter the quantity you wish to change: "))
@@ -268,10 +80,6 @@ while True:
             dist_change()
             break
         elif change_quantity == 3:
-            print("Entering currency mode")
-            cur_change()
-            break
-        elif change_quantity == 4:
             print("Entering temperature mode")
             temp_change()
             break
@@ -284,4 +92,3 @@ while True:
         break
     else:
         print("Invalid Value, Try again!!")
-"""
