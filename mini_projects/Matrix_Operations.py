@@ -60,3 +60,40 @@ def transpose_matrix(matrix):
         result.append(row)
     display_matrix(result)
     return result
+
+# MENU
+def menu():
+    print("--------------------------------------------------------")
+    print("-------------- STARTING MATRIX OPERATIONS --------------")
+    print("Available Operations:")
+    print("1. Input Matrix & Display Matrix")
+    print("2. Add/Subtract/Multiply Matrices")
+    print("3. Transpose Matrix")
+    print("4. Exit")
+    while True:
+        inp = int(input("Enter your choice (1/2/3/4): ").strip())
+        match inp:
+            case 1:
+                matrix = input_matrix()
+                display_matrix(matrix)
+            case 2:
+                print("Matrix 1:")
+                matrix_1 = input_matrix()
+                print("Matrix 2:")
+                matrix_2 = input_matrix()
+                basic_operators(matrix_1, matrix_2)
+            case 3:
+                print("Matrix:")
+                matrix = input_matrix()
+                transpose_matrix(matrix)
+            case 4:
+                print("Exiting...")
+                break
+            case _:
+                print("Invalid choice. Please enter a valid option.")
+        cont = input("Do you want to continue? (y/n): ").strip().lower()
+        if cont == 'n':
+            print("Exiting...")
+            break
+        if cont != 'y':
+            print("Invalid input. Returning to menu.")
