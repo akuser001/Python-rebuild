@@ -27,14 +27,14 @@ def display_matrix(matrix):
         print(row,end="\n")
 
 # ADDITION OF TWO MATRICES
-def add_or_subtract_matrices(matrix_1, matrix_2):
+def basic_operators(matrix_1, matrix_2):
     if len(matrix_1) != len(matrix_2) or len(matrix_1[0]) != len(matrix_2[0]):
         print("Invalid Matrix dimensions, should be the same for both matrices.")
         return None
-    a = input("Enter 'add' for addition or 'subtract' for subtraction: ").strip().lower()
-    while a not in ['add', 'subtract']:
-        print("Invalid input. Please enter 'add' or 'subtract'.")
-        a = input("Enter 'add' for addition or 'subtract' for subtraction: ").strip().lower()
+    a = input("Enter mode (add/subtract/multiply): ").strip().lower()
+    while a not in ['add', 'subtract','multiply']:
+        print("Invalid input. Please enter 'add' or 'subtract' or 'multiply'.")
+        a = input("Enter mode (add/subtract/multiply): ").strip().lower()
     result = []
     for i in range(len(matrix_1)):
         row = []
@@ -43,6 +43,8 @@ def add_or_subtract_matrices(matrix_1, matrix_2):
                 row.append(matrix_1[i][j] + matrix_2[i][j])
             elif a == 'subtract':
                 row.append(matrix_1[i][j] - matrix_2[i][j])
+            elif a == 'multiply':
+                row.append(matrix_1[i][j] * matrix_2[i][j])
         result.append(row)
     display_matrix(result)
     return result
