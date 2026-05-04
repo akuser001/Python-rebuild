@@ -82,4 +82,9 @@ def main():
             is_running = False
         
 if __name__ == "__main__":
-    main()
+    while True:
+        main()
+        play_again = input("Do you want to play again? (y/n): ").lower()
+        if play_again != "y":
+            print("Thanks for playing!")
+            break
