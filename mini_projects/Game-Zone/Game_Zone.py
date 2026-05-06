@@ -1,4 +1,4 @@
-#Game-Zone
+#Game-Zone, a collection of mini-games for entertainment.
 import Hangman
 def main_menu():
     print("Welcome to Game-Zone!")
