@@ -16,3 +16,17 @@ def num_g():
     Number_guess.main()
 def ttt():
     Tic.main()
+def main():
+    while True:
+        choice = main_menu()
+        if choice == "1":
+            hang()
+        elif choice == "2":
+            num_g()
+        elif choice == "3":
+            ttt()
+        elif choice == "4":
+            print("Thanks for playing! Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")

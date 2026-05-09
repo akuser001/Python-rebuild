@@ -32,4 +32,5 @@ def main ():
         play_again = input("Do you want to play again? (yes/no): ")
         if play_again.lower() != "yes":
             print("Thanks for playing! Goodbye!")
+            print("Returning to main menu...")
             break

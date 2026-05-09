@@ -71,4 +71,5 @@ def main():
             main()
         else:
             print("Thanks for playing! Goodbye!")
+            print("Returning to main menu...")
             break
