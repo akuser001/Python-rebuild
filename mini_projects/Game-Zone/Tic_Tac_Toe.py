@@ -7,13 +7,13 @@ grid = { 1: row1,
         3: row3}
 elements = []
 for row in grid:
-    for element in grid[row].values():
-        elements.append(element)
+    for cell in grid[row].values():
+        elements.append(cell)
 
 def display_grid(elements):
-    for row in grid:
-        for element in grid[row].values():
-            print(element, end = "|")
+    for i in range(0,9,3):
+        for j in range(3):
+            print(elements[i+j], end="|")
         print()
 
 empty_blocks = [0,1,2,3,4,5,6,7,8]
@@ -36,9 +36,7 @@ def pc_turn(elements, empty_blocks):
     empty_blocks.remove(pc_block)
     elements[pc_block] = "_o_"
     display_grid(elements)
-win_combos = [(0,1,2),(3,4,5),(6,7,8),
-                        (0,3,6),(1,4,7),(2,5,8),
-                        (0,4,8),(2,4,6)]
+win_combos = [(0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6)]
 
 def win_check(win_combos, elements):
     for win_combo_tuple in win_combos:
