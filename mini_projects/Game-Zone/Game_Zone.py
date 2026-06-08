@@ -4,7 +4,8 @@ import Number_guess
 import Tic_Tac_Toe as Tic
 def main_menu():
     print("Welcome to Game-Zone!")
-    print("1. Play Hangman")
+    print("Which game would you like to play?")
+    print("1. Hangman")
     print("2. Number Guessing Game")
     print("3. tic-tac-toe")
     print("4. Exit")
@@ -30,3 +31,4 @@ def main():
             break
         else:
             print("Invalid choice. Please try again.")
+main()

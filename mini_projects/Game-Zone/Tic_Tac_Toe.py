@@ -3,17 +3,12 @@ row1 =  {1: "_ _", 2: "_ _", 3: "_ _"}
 row2 = {4: "_ _", 5: "_ _", 6: "_ _"}
 row3 = {7: "_ _", 8: "_ _", 9: "_ _"}
 grid = { 1: row1,
-            2: row2,
-            3: row3}
+        2: row2,
+        3: row3}
 elements = []
 for row in grid:
     for element in grid[row].values():
         elements.append(element)
-print("Welcome to game")
-print("The following is the values assigned for xo-grid while playing")
-for i in range(1,4):
-    print(grid[i])
-print("All the best for your game!!")
 
 def display_grid(elements):
     for row in grid:
@@ -41,7 +36,6 @@ def pc_turn(elements, empty_blocks):
     empty_blocks.remove(pc_block)
     elements[pc_block] = "_o_"
     display_grid(elements)
-display_grid(elements)
 win_combos = [(0,1,2),(3,4,5),(6,7,8),
                         (0,3,6),(1,4,7),(2,5,8),
                         (0,4,8),(2,4,6)]
@@ -56,6 +50,12 @@ def win_check(win_combos, elements):
             break
 
 def main():
+    print("Welcome to game")
+    print("The following is the values assigned for xo-grid while playing")
+    for i in range(1,4):
+        print(grid[i])
+    print("All the best for your game!!")
+    display_grid(elements)
     while True:
         while True:
             user_turn(elements,empty_blocks)
