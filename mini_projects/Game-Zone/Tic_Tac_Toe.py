@@ -40,12 +40,14 @@ win_combos = [(0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6)]
 
 def win_check(win_combos, elements):
     for win_combo_tuple in win_combos:
-        if win_combo_tuple[0] == "_x_" and win_combo_tuple[1] == "_x_" and win_combo_tuple[2] == "_x_":
+        if elements[win_combo_tuple[0]] == "_x_" and elements[win_combo_tuple[1]] == "_x_" and elements[win_combo_tuple[2]] == "_x_":
             print("You Won!!")
-            break
-        elif win_combo_tuple[0] == "_o_" and win_combo_tuple[1] == "_o_" and win_combo_tuple[2] == "_o_":
+            return True
+        elif elements[win_combo_tuple[0]] == "_o_" and elements[win_combo_tuple[1]] == "_o_" and elements[win_combo_tuple[2]] == "_o_":
             print("Pc Won!!")
-            break
+            return True
+        else:
+            continue
 
 def main():
     print("Welcome to game")
@@ -64,10 +66,10 @@ def main():
             win_check(win_combos, elements)
             pc_turn(elements,empty_blocks)
             win_check(win_combos, elements)
+            if win_check(win_combos, elements):
+                break
         continue_game = input("Do you want to play again? (yes/no): ")
-        if continue_game.lower() == "yes":  
-            main()
-        else:
+        if continue_game.lower() != "yes":  
             print("Thanks for playing! Goodbye!")
             print("Returning to main menu...")
             break
