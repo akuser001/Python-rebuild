@@ -1,13 +1,13 @@
 ## Python-rebuild
-I’ve learned Python before, but not properly. This time I’m starting again and focusing on actually understanding things instead of rushing.
+I had learned Python before, but I wanted to go back and build a stronger foundation instead of just moving on to harder topics.
 
-This repo is where I’ll be putting:
+This repository is where I keep everything related to that process. It includes:
 
-* basic concepts
-* practice problems
-* dsa problems
-* small projects
-* experiments while trying new ideas
+* Python fundamentals
+* Practice problems
+* DSA practice
+* Mini projects
+* Experiments while exploring new ideas
 
 I’m not following a strict plan. Just trying to stay consistent and improve.
 Some code here might be messy or basic at first, but the goal is to get better with each update.
@@ -19,4 +19,5 @@ This repo is organized into different branches:
 * Mini-Projects → small projects to apply what I learn
 * DSA → improving problem solving and logic
 
-This is less about finishing fast, and more about getting it right this time.
+The goal of this repository isn't to showcase polished projects. It's to document my progress as I learn, practice, and improve over time.
+This isn't a structured course or a finished project—it's an active learning repository that will continue to grow as I improve.
