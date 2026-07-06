@@ -5,7 +5,6 @@ This repository is where I keep everything related to that process. It includes:
 
 * Python fundamentals
 * Practice problems
-* DSA practice
 * Mini projects
 * Experiments while exploring new ideas
 
@@ -17,7 +16,6 @@ This repo is organized into different branches:
 
 * Fundamentals → core concepts and basic practice
 * Mini-Projects → small projects to apply what I learn
-* DSA → improving problem solving and logic
 
 The goal of this repository isn't to showcase polished projects. It's to document my progress as I learn, practice, and improve over time.
 This isn't a structured course or a finished project—it's an active learning repository that will continue to grow as I improve.
